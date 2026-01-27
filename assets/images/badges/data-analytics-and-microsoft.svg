@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="102px" height="102px" viewBox="0 0 102 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Overview of data analysis in Power BI/data-analytics-and-microsoft</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="94.3396226" height="94.3396226" rx="47.1698113"></rect>
+        <filter x="-2.9%" y="-2.9%" width="106.4%" height="106.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="2.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0.5" dy="0.5" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0.5" dy="0.5" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.821822822   0 0 0 0 0.831640661   0 0 0 0 0.835737288  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#4E4E57" offset="0%"></stop>
+            <stop stop-color="#2E2E34" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-5" x="0" y="0" width="94.3396226" height="94.3396226"></rect>
+        <path d="M47.1698113,0 C73.2209788,0 94.3396226,21.1186439 94.3396226,47.1698113 C94.3396226,73.2209788 73.2209788,94.3396226 47.1698113,94.3396226 C21.1186439,94.3396226 0,73.2209788 0,47.1698113 C0,21.1186439 21.1186439,0 47.1698113,0 Z M47.1698113,3.77358491 C23.2027373,3.77358491 3.77358491,23.2027373 3.77358491,47.1698113 C3.77358491,71.1368854 23.2027373,90.5660377 47.1698113,90.5660377 C71.1368854,90.5660377 90.5660377,71.1368854 90.5660377,47.1698113 C90.5660377,23.2027373 71.1368854,3.77358491 47.1698113,3.77358491 Z" id="path-6"></path>
+        <filter x="-28.1%" y="-23.2%" width="156.6%" height="146.7%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="50%" y1="0.670396959%" x2="50%" y2="100%" id="linearGradient-9">
+            <stop stop-color="#6A6A6A" offset="0%"></stop>
+            <stop stop-color="#343333" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="97.5691716%" x2="50%" y2="-5.30956676%" id="linearGradient-10">
+            <stop stop-color="#0078D4" offset="0%"></stop>
+            <stop stop-color="#1380DA" offset="16%"></stop>
+            <stop stop-color="#3C91E5" offset="53%"></stop>
+            <stop stop-color="#559CEC" offset="82%"></stop>
+            <stop stop-color="#5EA0EF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-11">
+            <stop stop-color="#DA3A00" offset="0%"></stop>
+            <stop stop-color="#DA3A00" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="2.04550253%" x2="50%" y2="100%" id="linearGradient-12">
+            <stop stop-color="#FFE02A" offset="0%"></stop>
+            <stop stop-color="#FFB518" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-33.9%" y="-33.9%" width="169.6%" height="169.6%" filterUnits="objectBoundingBox" id="filter-13">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <circle id="path-14" cx="67" cy="67" r="16"></circle>
+        <filter x="-3.1%" y="-3.1%" width="106.2%" height="112.5%" filterUnits="objectBoundingBox" id="filter-15">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Badges" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Overview-of-data-analysis-in-Power-BI" transform="translate(-159.000000, -509.000000)">
+            <g id="Overview-of-data-analysis-in-Power-BI/data-analytics-and-microsoft" transform="translate(160.000000, 510.000000)">
+                <g id="Badge-Plates/Circle">
+                    <g id="BG" transform="translate(2.830189, 2.830189)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g>
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                            <rect stroke="#F2F1F0" stroke-width="2.5" x="-1.25" y="-1.25" width="96.8396226" height="96.8396226" rx="48.4198113"></rect>
+                        </g>
+                        <g id="Colors/Power-BI/BG-Solid-1" mask="url(#mask-2)">
+                            <rect id="Rectangle" fill="url(#linearGradient-4)" x="0" y="0" width="94.3396226" height="94.3396226"></rect>
+                            <g id="Rectangle">
+                                <use fill="#F2C811" xlink:href="#path-5"></use>
+                                <use fill-opacity="0.501092657" fill="#FFFFFF" xlink:href="#path-5"></use>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Border" transform="translate(2.830189, 2.830189)">
+                        <mask id="mask-7" fill="white">
+                            <use xlink:href="#path-6"></use>
+                        </mask>
+                        <use id="Boarder" fill="#0078D4" fill-rule="nonzero" xlink:href="#path-6"></use>
+                        <g id="Colors/Power-BI/Border" mask="url(#mask-7)" fill="#F3C900">
+                            <rect id="Rectangle" x="0" y="0" width="94.3396226" height="94.3396226"></rect>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group-2" transform="translate(16.000000, 19.000000)" fill-rule="nonzero">
+                    <g id="Document-w/-Data" filter="url(#filter-8)" transform="translate(7.727273, -0.000000)">
+                        <g id="Icon-azurestack-6">
+                            <g id="Group">
+                                <path d="M24.5177029,0.0477700925 L2.06634566,0.0477700925 C1.08334996,0.0477700925 0.286474501,0.836587688 0.286474501,1.80964351 L0.286474501,49.4111357 C0.286474501,50.3841915 1.08334996,51.1730091 2.06634566,51.1730091 L40.7238982,51.1730091 C41.7068939,51.1730091 42.5037694,50.3841915 42.5037694,49.4111357 L42.5037694,17.9137847 C42.5037694,16.9407289 41.7068939,16.1519113 40.7238982,16.1519113 L27.8900904,16.1519113 C26.9243402,16.1519113 26.141445,15.3769326 26.141445,14.4209479 L26.141445,1.80964351 C26.160438,0.888068153 25.4465214,0.113418844 24.5177029,0.0477700925 Z" id="Path" fill="url(#linearGradient-9)"></path>
+                                <path d="M42.7450111,17.2478134 L25.3303769,0 L25.3303769,13.9749835 C25.3303769,15.7825176 26.8014708,17.2478134 28.616157,17.2478134 L42.7450111,17.2478134 Z" id="Path" fill="#4A4C4A"></path>
+                            </g>
+                        </g>
+                        <g id="Computer" transform="translate(7.064935, 11.480519)">
+                            <rect id="Rectangle" fill="#FFFFFF" x="0" y="5.72949002" width="12.4188312" height="2.45549572" rx="1.22774786"></rect>
+                            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="12.4188312" height="2.45549572" rx="1.22774786"></rect>
+                            <rect id="Rectangle" fill="#FFFFFF" x="0" y="11.45898" width="7.4512987" height="2.45549572" rx="1.22774786"></rect>
+                            <rect id="Rectangle" fill="url(#linearGradient-10)" x="0.827922078" y="26.1919544" width="5.79545455" height="7.36648717"></rect>
+                            <rect id="Rectangle" fill="url(#linearGradient-11)" x="10.762987" y="19.6439658" width="5.79545455" height="13.9144758"></rect>
+                            <rect id="Rectangle" fill="url(#linearGradient-12)" x="20.6980519" y="11.45898" width="5.79545455" height="22.0994615"></rect>
+                        </g>
+                    </g>
+                    <g id="Magnifying-Glass" filter="url(#filter-13)" transform="translate(0.000000, 10.303030)">
+                        <path d="M-0.395789804,24.7521414 L17.7891354,24.7281077 C18.1370745,24.7276479 18.4195076,25.0093355 18.4199674,25.3572746 C18.4199682,25.3578759 18.4199682,25.3584773 18.4199672,25.3590786 L18.4155949,28.1945881 C18.4150595,28.5418228 18.133663,28.8231572 17.7864283,28.8236161 L-0.39849691,28.8476498 C-0.746435998,28.8481097 -1.02886914,28.5664221 -1.02932898,28.218483 C-1.02932978,28.2178816 -1.02932971,28.2172803 -1.02932879,28.2166789 L-1.02495643,25.3811694 C-1.02442099,25.0339348 -0.743024563,24.7526004 -0.395789804,24.7521414 Z" id="Rectangle" fill="#C7A701" transform="translate(8.695319, 26.787879) rotate(-45.000000) translate(-8.695319, -26.787879) "></path>
+                        <circle id="Oval" fill="#F7CF00" cx="21.3787879" cy="13.6515152" r="13.6515152"></circle>
+                        <circle id="Oval" fill="#5F5F5F" cx="21.3787879" cy="13.9090909" r="10.8181818"></circle>
+                        <path d="M15.664422,14.1645022 L18.7171717,20.6060606 L21.8080808,12.3290043 L24.3647587,17.038961 L27.5319865,12.1904762 L32.0424242,12.1904762 C31.9306257,11.639113 31.8791105,11.2684363 31.7447029,10.5627706 L26.6924804,10.5627706 L24.6318743,13.7142857 L21.4646465,8.24242424 L18.5263749,16.1038961 L15.8552189,10.5281385 L12.5735129,15.965368 L10.8181818,15.965368 C10.8181818,16.8528139 10.982433,17.0684195 11.230303,17.5930736 L13.6038159,17.5930736 L15.664422,14.1645022 Z" id="Path" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+                <g id="Oval">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-15)" xlink:href="#path-14"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-14"></use>
+                </g>
+                <g id="Group-4" transform="translate(57.500000, 59.000000)" fill-rule="nonzero">
+                    <polygon id="Rectangle-path" fill="#E86C60" points="-3.85469434e-13 1.98063788e-13 7.95285714 1.98063788e-13 7.95285714 7.42285714 -3.85469434e-13 7.42285714"></polygon>
+                    <polygon id="Rectangle-path" fill="#72C472" points="10.6028571 5.72430991e-13 18.5557143 5.72430991e-13 18.5557143 7.42142857 10.6028571 7.42142857"></polygon>
+                    <polygon id="Rectangle-path" fill="#43A6DD" points="-3.85469434e-13 9.89571429 7.95285714 9.89571429 7.95285714 17.3185714 -3.85469434e-13 17.3185714"></polygon>
+                    <polygon id="Rectangle-path" fill="#EFD358" points="10.6028571 9.89571429 18.5557143 9.89571429 18.5557143 17.3185714 10.6028571 17.3185714"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
