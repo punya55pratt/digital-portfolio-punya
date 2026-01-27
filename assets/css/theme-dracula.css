@@ -1,0 +1,384 @@
+/* ==============================
+   DRACULA THEME
+   Base: #282a36, #44475a, #6272a4
+   Text: #f8f8f2
+   Accents: #ff79c6 #8be9fd #bd93f9 #50fa7b #ffb86c #f1fa8c
+   ============================== */
+
+:root {
+  /* Base surfaces */
+  --smoky-black: #282a36;
+  /* background */
+  --eerie-black-1: #44475a;
+  /* cards */
+  --eerie-black-2: #343746;
+  /* cards alt */
+  --onyx: #2f3140;
+  /* inner surfaces */
+  --jet: #6272a4;
+  /* borders / separators */
+
+  /* Text */
+  --white-1: #f8f8f2;
+  --white-2: #f8f8f2;
+  --light-gray: rgba(248, 248, 242, 0.84);
+  --light-gray-70: rgba(248, 248, 242, 0.65);
+
+  /* Accents */
+  --orange-yellow-crayola: #f1fa8c;
+  /* highlight yellow */
+  --vegas-gold: #ffb86c;
+  /* orange */
+  --bittersweet-shimmer: #ff5555;
+  /* red */
+
+  /* Gradients (repurposing your existing variable names) */
+  --text-gradient-yellow: linear-gradient(to right, #ff79c6, #8be9fd);
+
+  --bg-gradient-onyx: linear-gradient(to bottom right, #44475a 0%, #282a36 100%);
+  --bg-gradient-jet: linear-gradient(to bottom right, rgba(189, 147, 249, 0.24), rgba(40, 42, 54, 0) 70%), #343746;
+
+  --border-gradient-onyx: linear-gradient(to bottom right, rgba(98, 114, 164, 0.85), rgba(98, 114, 164, 0));
+
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, rgba(255, 121, 198, 0.55) 0%, rgba(139, 233, 253, 0) 55%);
+  --bg-gradient-yellow-2: linear-gradient(135deg, rgba(189, 147, 249, 0.35) 0%, rgba(80, 250, 123, 0) 60%), #343746;
+
+  /* Theme-wide “chip gradient” colors */
+  --role-pill-start: #bd93f9;
+  /* purple */
+  --role-pill-mid: #ff79c6;
+  /* pink */
+  --role-pill-end: #8be9fd;
+  /* cyan */
+
+
+
+
+
+  --subtitle-fg: #f8f8f2;
+  /* Foreground text */
+  --subtitle-bg: #44475a;
+  /* Lighter background */
+  --subtitle-bg-fallback: rgba(68, 71, 90, 0.92);
+
+  /* Border + sheen */
+  --subtitle-border: rgba(98, 114, 164, 0.55);
+  /* #6272a4 comments */
+
+  /* Accent strip + sheen tint */
+  --subtitle-accent-grad: linear-gradient(90deg, #ff79c6, #bd93f9, #8be9fd);
+
+  /* Tinted sheen colors (pink + cyan mix) */
+  --subtitle-sheen-a: rgba(255, 121, 198, 0.22);
+  /* pink */
+  --subtitle-sheen-b: rgba(139, 233, 253, 0.18);
+  /* cyan */
+  --subtitle-sheen-c: rgba(189, 147, 249, 0.16);
+  /* purple */
+
+
+  --social-icon: rgba(248, 248, 242, 0.70);
+  /* #f8f8f2 softened */
+  --social-icon-hover: #ff79c6;
+  /* pink */
+  --social-icon-active: #8be9fd;
+  /* cyan */
+
+
+
+  --badge-pulse-rgb: 139, 233, 253;
+  /* #8be9fd cyan */
+  --badge-media-glow: rgba(var(--badge-pulse-rgb), 0.22);
+
+  --drac-pink-rgb: 255, 121, 198;
+  /* #ff79c6 */
+  --drac-cyan-rgb: 139, 233, 253;
+  /* #8be9fd */
+  --drac-green-rgb: 80, 250, 123;
+  /* #50fa7b */
+
+
+}
+
+/* Dracula chip styling */
+.project-category,
+.badges-category,
+.skills-group-title .skills-chip,
+.skill-progress-fill {
+  background: radial-gradient(120% 120% at 30% 20%,
+      var(--role-pill-start) 20%,
+      var(--role-pill-mid) 50%,
+      var(--role-pill-end) 100%);
+  color: #1b1b1b;
+}
+
+/* Experience bullets glow color */
+.experience .timeline-bullets li::before {
+  background: #50fa7b;
+  /* green */
+  box-shadow:
+    0 0 0 3px rgba(80, 250, 123, 0.18),
+    0 0 12px rgba(80, 250, 123, 0.30);
+}
+
+
+
+html[data-theme="dracula"] .info-content .subtitle {
+  position: relative;
+  overflow: hidden;
+
+  background: var(--subtitle-bg);
+  color: var(--subtitle-fg);
+
+  /* Keep your preferred structure */
+  border: 1px solid var(--subtitle-border);
+  box-shadow:
+    0 0 0 3px rgba(139, 233, 253, 0.08),
+    /* cyan ring */
+    0 10px 24px rgba(0, 0, 0, 0.30);
+
+  /* Make it feel more “badge-like” */
+  opacity: 1;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  border-radius: 999px;
+  padding: 6px 14px 6px 16px;
+}
+
+
+
+/* Left accent strip */
+html[data-theme="dracula"] .info-content .subtitle::before {
+  content: "";
+  position: relative;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--subtitle-accent-grad);
+  opacity: 0.95;
+}
+
+/* Tinted pink + cyan sheen sweep */
+html[data-theme="dracula"] .info-content .subtitle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* sheen is tinted (pink → purple → cyan) */
+  background: linear-gradient(110deg,
+      rgba(0, 0, 0, 0) 0%,
+      var(--subtitle-sheen-a) 38%,
+      var(--subtitle-sheen-c) 50%,
+      var(--subtitle-sheen-b) 62%,
+      rgba(0, 0, 0, 0) 78%);
+
+  /* narrow sweep band */
+  filter: blur(0.2px);
+  transform: translateX(-70%);
+  animation: subtitleSheenDraculaTint 3.8s ease-in-out infinite;
+  pointer-events: none;
+
+  /* keep sheen subtle */
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+
+@keyframes subtitleSheenDraculaTint {
+  0% {
+    transform: translateX(-70%);
+    opacity: 0;
+  }
+
+  22% {
+    opacity: 0.95;
+  }
+
+  52% {
+    transform: translateX(70%);
+    opacity: 0.28;
+  }
+
+  100% {
+    transform: translateX(70%);
+    opacity: 0;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="dracula"] .info-content .subtitle::after {
+    animation: none;
+    opacity: 0;
+    /* no moving sheen */
+  }
+}
+
+
+
+/* ==============================
+   DRACULA MODE NAVBAR
+   ============================== */
+
+html[data-theme="dracula"] .navbar {
+  background:
+    linear-gradient(180deg,
+      rgba(189, 147, 249, 0.14) 0%,
+      /* purple tint */
+      rgba(139, 233, 253, 0.08) 100%
+      /* cyan tint */
+    ),
+    /* rgba(40, 42, 54, 0.88) !important; */
+    rgba(139, 233, 253, 0.14) !important;
+  /* #282a36 base */
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(98, 114, 164, 0.55) !important;
+  /* #6272a4 comments */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Links */
+html[data-theme="dracula"] .navbar-link {
+  color: rgba(248, 248, 242, 0.86) !important;
+  /* #f8f8f2 */
+  font-size: var(--fs-8);
+  padding: 20px 7px;
+  transition: color var(--transition-1);
+}
+
+/* Hover/focus */
+html[data-theme="dracula"] .navbar-link:hover,
+html[data-theme="dracula"] .navbar-link:focus {
+  color: rgba(255, 121, 198, 0.85) !important;
+}
+
+/* Active: use Sea Green equivalent in Dracula? (Dracula green) */
+html[data-theme="dracula"] .navbar-link.active {
+  color: #50fa7b !important;
+  /* Dracula green */
+  /* color: #ff79c6 !important; */
+  /* pink */
+
+  position: relative;
+}
+
+/* Active underline */
+html[data-theme="dracula"] .navbar-link.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(80, 250, 123, 0.85);
+  /* background: rgba(255, 121, 198, 0.85); */
+}
+
+
+html[data-theme="dracula"] .org-highlight {
+  /* color: #ff79c6;  */
+  /* Dracula pink */
+  color: #50fa7b !important;
+  font-weight: 600;
+}
+
+/* Style for Badge Dracula Effect */
+
+/* Apply Dracula-specific animation ONLY in Dracula theme */
+html[data-theme="dracula"] .badges-card:hover,
+html[data-theme="dracula"] .badges-card:focus-visible {
+  animation: badges-pulse-dracula 1.6s ease-in-out infinite;
+}
+
+/* Focus ring (static) becomes triple-tone layered ring */
+html[data-theme="dracula"] .badges-card:focus-visible::after {
+  box-shadow:
+    0 0 0 2px rgba(var(--drac-pink-rgb), 0.85),
+    0 0 0 5px rgba(var(--drac-cyan-rgb), 0.55),
+    0 0 0 8px rgba(var(--drac-green-rgb), 0.35);
+}
+
+/* Triple-tone pulse animation: cycles Pink → Cyan → Green */
+@keyframes badges-pulse-dracula {
+  0% {
+    box-shadow:
+      0 6px 18px rgba(0, 0, 0, .25),
+      0 0 0 0 rgba(var(--drac-pink-rgb), 0.55),
+      0 0 0 0 rgba(var(--drac-pink-rgb), 0.28);
+  }
+
+  33% {
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, .28),
+      0 0 0 6px rgba(var(--drac-cyan-rgb), 0.38),
+      0 0 0 12px rgba(var(--drac-cyan-rgb), 0.16);
+  }
+
+  66% {
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, .28),
+      0 0 0 6px rgba(var(--drac-green-rgb), 0.36),
+      0 0 0 12px rgba(var(--drac-green-rgb), 0.14);
+  }
+
+  100% {
+    box-shadow:
+      0 6px 18px rgba(0, 0, 0, .25),
+      0 0 0 0 rgba(var(--drac-pink-rgb), 0),
+      0 0 0 0 rgba(var(--drac-pink-rgb), 0);
+  }
+}
+
+/* Media pulse (if you use .badges-media) — also triple-tone */
+html[data-theme="dracula"] .badges-card:hover .badges-media,
+html[data-theme="dracula"] .badges-card:focus-visible .badges-media {
+  animation: badges-pulse-media-dracula 1.6s ease-in-out infinite;
+}
+
+@keyframes badges-pulse-media-dracula {
+  0% {
+    filter: drop-shadow(0 0 0 rgba(var(--drac-pink-rgb), 0));
+  }
+
+  33% {
+    filter: drop-shadow(0 0 12px rgba(var(--drac-cyan-rgb), 0.22));
+  }
+
+  66% {
+    filter: drop-shadow(0 0 12px rgba(var(--drac-green-rgb), 0.22));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 0 rgba(var(--drac-pink-rgb), 0));
+  }
+}
+
+/* Reduce motion: keep a static triple-tone highlight */
+@media (prefers-reduced-motion: reduce) {
+
+  html[data-theme="dracula"] .badges-card:hover,
+  html[data-theme="dracula"] .badges-card:focus-visible {
+    animation: none !important;
+    transform: none;
+    box-shadow:
+      0 0 0 2px rgba(var(--drac-pink-rgb), 0.55) inset,
+      0 0 0 4px rgba(var(--drac-cyan-rgb), 0.35) inset,
+      0 0 0 6px rgba(var(--drac-green-rgb), 0.25) inset;
+  }
+
+  html[data-theme="dracula"] .badges-card .badges-media {
+    animation: none !important;
+    filter: none !important;
+  }
+}
+
+html[data-theme="dracula"] .timeline-item-title .meta:hover {
+  border-color: #8be9fd;
+  color: #f8f8f2;
+  background: rgba(139, 233, 253, 0.14);
+}

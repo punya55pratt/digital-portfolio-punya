@@ -1,0 +1,245 @@
+/* ==============================
+   LIGHT THEME — SeaGreen + Teal + Cream
+   ============================== */
+
+:root {
+    /* Base surfaces */
+    --smoky-black: #fbf7ef;
+    /* cream background */
+    --eerie-black-1: #ffffff;
+    /* cards */
+    --eerie-black-2: #f2fbf8;
+    /* cards alt */
+    --onyx: #e4f3f1;
+    /* inner surfaces */
+    --jet: #b9d9d3;
+    /* borders */
+
+    /* Text */
+    --white-1: #0b1f2a;
+    /* headings (repurposed) */
+    --white-2: #0b1f2a;
+    /* headings */
+    --light-gray: #27414b;
+    /* body text */
+    --light-gray-70: rgba(39, 65, 75, 0.72);
+
+    /* Accents */
+    --orange-yellow-crayola: #2e8b57;
+    /* SeaGreen */
+    --vegas-gold: #0f8392;
+    /* Teal Blue */
+    --bittersweet-shimmer: #c0392b;
+    /* error */
+
+    /* Gradients */
+    --text-gradient-yellow: linear-gradient(to right, #0f8392, #2e8b57);
+
+    --bg-gradient-onyx: linear-gradient(to bottom right, #ffffff 0%, #e7f6f3 100%);
+    --bg-gradient-jet: linear-gradient(to bottom right, rgba(46, 139, 87, 0.12), rgba(15, 131, 146, 0) 70%), #ffffff;
+
+    --border-gradient-onyx: linear-gradient(to bottom right, rgba(15, 131, 146, 0.55), rgba(46, 139, 87, 0.25));
+
+    --bg-gradient-yellow-1: linear-gradient(to bottom right, rgba(15, 131, 146, 0.35) 0%, rgba(46, 139, 87, 0) 55%);
+    --bg-gradient-yellow-2: linear-gradient(135deg, rgba(15, 131, 146, 0.25) 0%, rgba(46, 139, 87, 0) 60%), #ffffff;
+
+    /* So your “gold pills” become teal/green */
+    --role-pill-start: #0f8392;
+    --role-pill-mid: #1aa6a8;
+    --role-pill-end: #2e8b57;
+
+    /* Lighter shadows for light background */
+    --shadow-1: -4px 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-2: 0 16px 30px rgba(0, 0, 0, 0.10);
+    --shadow-3: 0 16px 40px rgba(0, 0, 0, 0.10);
+    --shadow-4: 0 25px 50px rgba(0, 0, 0, 0.08);
+    --shadow-5: 0 24px 80px rgba(0, 0, 0, 0.12);
+
+
+
+
+    --subtitle-fg: #fbf7ef;
+    /* cream/off-white text */
+    --subtitle-bg: #2e8b57;
+    /* Sea Green background */
+    --subtitle-bg-fallback: #2e8b57;
+    /* fallback same as bg */
+    --subtitle-border: rgba(15, 131, 146, 0.35);
+    /* Teal-ish border (optional) */
+
+
+    --social-icon: rgba(11, 31, 42, 0.55);
+    /* ink on cream */
+    --social-icon-hover: #0f8392;
+    /* teal blue */
+    --social-icon-active: #2e8b57;
+    /* sea green */
+
+    /* Sea Green pulse */
+    --badge-pulse-rgb: 46, 139, 87;
+
+    /* Optional: slightly lighter shadow for light UI */
+    --badge-shadow-base: 0 10px 22px rgba(0, 0, 0, 0.12);
+    --badge-shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.14);
+    --badge-media-glow: rgba(var(--badge-pulse-rgb), 0.22);
+
+}
+
+/* Map should not be inverted in light mode */
+.mapbox iframe {
+    filter: grayscale(0) invert(0);
+}
+
+/* Re-skin the main “golden gradient” UI chips to teal/green */
+.project-category,
+.badges-category,
+.skills-group-title .skills-chip,
+.skill-progress-fill {
+    background: radial-gradient(120% 120% at 30% 20%,
+            var(--role-pill-start) 20%,
+            var(--role-pill-mid) 50%,
+            var(--role-pill-end) 100%);
+    color: #06202a;
+}
+
+/* Experience bullets glow color */
+.experience .timeline-bullets li::before {
+    background: var(--orange-yellow-crayola);
+    box-shadow:
+        0 0 0 3px rgba(46, 139, 87, 0.18),
+        0 0 10px rgba(46, 139, 87, 0.28);
+}
+
+
+
+
+/* Light Theme: Subtitle prominent (Sea Green chip + Cream text) */
+html[data-theme="light"] .info-content .subtitle {
+    /* background + text */
+    background: var(--subtitle-bg);
+    color: var(--subtitle-fg);
+
+    /* your requested structure */
+    border: 1px solid var(--subtitle-border);
+    box-shadow:
+        0 0 0 3px rgba(46, 139, 87, 0.14),
+        0 10px 24px rgba(0, 0, 0, 0.14);
+
+
+    /* make it pop a bit more */
+    opacity: 1;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+
+    /* optional: more “badge-like” */
+    border-radius: 999px;
+    padding: 6px 14px;
+}
+
+
+html[data-theme="light"] .info-content .subtitle::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.20) 45%,
+            rgba(255, 255, 255, 0) 70%);
+    transform: translateX(-60%);
+    animation: subtitleSheen 3.6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes subtitleSheen {
+    0% {
+        transform: translateX(-60%);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.9;
+    }
+
+    55% {
+        transform: translateX(60%);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translateX(60%);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html[data-theme="light"] .info-content .subtitle::after {
+        animation: none;
+    }
+}
+
+
+html[data-theme="light"] .navbar {
+    background:
+        linear-gradient(180deg,
+            rgba(15, 131, 146, 0.10) 0%,
+            rgba(46, 139, 87, 0.06) 100%),
+        rgba(251, 247, 239, 0.88) !important;
+    border: 1px solid rgba(15, 131, 146, 0.25) !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12) !important;
+
+}
+
+html[data-theme="light"] .navbar-link {
+    color: rgba(11, 31, 42, 0.86) !important;
+    font-size: var(--fs-8);
+    padding: 20px 7px;
+    transition: color var(--transition-1);
+}
+
+
+html[data-theme="light"] .navbar-link:hover,
+html[data-theme="light"] .navbar-link:focus {
+    color: rgba(30, 86, 160, 0.62) !important;
+}
+
+
+html[data-theme="light"] .navbar-link.active {
+    color: #2e8b57 !important;
+    /* Teal Blue accent */
+    position: relative;
+}
+
+html[data-theme="light"] .navbar-link.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    /* adjust if needed */
+    transform: translateX(-50%);
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: rgba(46, 139, 87, 0.8);
+}
+
+
+html[data-theme="light"] .org-highlight {
+    color: #2e8b57;
+    /* Sea Green */
+    font-weight: 600;
+}
+
+/* html[data-theme="light"] .timeline-item-title .meta:hover {
+  border-color: #0f8392;
+  color: var(--white-1);
+  background: rgba(30, 86, 160, 0.62);
+  } */
+  /* subtle golden tint */
+
+
+
+html[data-theme="light"] .timeline-item-title .meta:hover {
+  border-color: #2e8b57;
+  color: rgba(11, 31, 42, 0.92);
+  background: rgba(30, 86, 160, 0.62);
+}
