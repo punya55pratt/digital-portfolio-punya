@@ -97,6 +97,19 @@
   --drac-green-rgb: 80, 250, 123;
   /* #50fa7b */
 
+  
+  --li-shadow: 0 14px 32px rgba(0,0,0,0.35);
+  --li-ring: rgba(139, 233, 253, 0.18); /* cyan ring for Dracula */  
+
+  
+  --follow-note: rgba(248, 248, 242, 0.75);
+
+  --li-btn-shadow: 0 14px 32px rgba(0,0,0,0.38);
+  --li-btn-ring: rgba(139, 233, 253, 0.20);
+
+  --li-glow-cyan: rgba(139, 233, 253, 0.20);
+  --li-glow-pink: rgba(255, 121, 198, 0.16);
+
 
 }
 
@@ -381,4 +394,44 @@ html[data-theme="dracula"] .timeline-item-title .meta:hover {
   border-color: #8be9fd;
   color: #f8f8f2;
   background: rgba(139, 233, 253, 0.14);
+}
+
+html[data-theme="dracula"] .follow-linkedin-btn:hover,
+html[data-theme="dracula"] .follow-linkedin-btn:focus-visible {
+  box-shadow:
+    0 16px 36px rgba(0,0,0,0.42),
+    0 0 18px var(--li-glow-cyan),
+    0 0 26px var(--li-glow-pink);
+}
+
+html[data-theme="dracula"] .follow-linkedin-btn:focus-visible {
+  box-shadow:
+    0 16px 36px rgba(0,0,0,0.42),
+    0 0 18px var(--li-glow-cyan),
+    0 0 26px var(--li-glow-pink),
+    0 0 0 4px var(--li-ring);
+}
+
+
+html[data-theme="dracula"] .libutton:hover,
+html[data-theme="dracula"] .libutton:focus-visible {
+  box-shadow:
+    0 16px 36px rgba(0,0,0,0.42),
+    0 0 18px var(--li-glow-cyan),
+    0 0 26px var(--li-glow-pink);
+}
+
+html[data-theme="dracula"] .libutton:focus-visible {
+  box-shadow:
+    0 16px 36px rgba(0,0,0,0.42),
+    0 0 18px var(--li-glow-cyan),
+    0 0 26px var(--li-glow-pink),
+    0 0 0 4px var(--li-btn-ring);
+}
+
+html[data-theme="dracula"] .linkedIn-highlight {
+  /* color: #ff79c6;  */
+  /* Dracula pink */
+  color: #50fa7b !important;
+  font-weight: 600;
 }

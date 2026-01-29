@@ -83,6 +83,15 @@
     --badge-shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.14);
     --badge-media-glow: rgba(var(--badge-pulse-rgb), 0.22);
 
+
+
+    --follow-note: rgba(11, 31, 42, 0.62);
+    /* readable on cream */
+    --li-btn-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    --li-btn-ring: rgba(46, 139, 87, 0.18);
+    /* sea green ring */
+
+
 }
 
 /* Map should not be inverted in light mode */
@@ -234,12 +243,18 @@ html[data-theme="light"] .org-highlight {
   color: var(--white-1);
   background: rgba(30, 86, 160, 0.62);
   } */
-  /* subtle golden tint */
+/* subtle golden tint */
 
 
 
 html[data-theme="light"] .timeline-item-title .meta:hover {
-  border-color: #2e8b57;
-  color: rgba(11, 31, 42, 0.92);
-  background: rgba(30, 86, 160, 0.62);
+    border-color: #2e8b57;
+    color: rgba(11, 31, 42, 0.92);
+    background: rgba(30, 86, 160, 0.62);
+}
+
+html[data-theme="light"] .linkedIn-highlight {
+    color: #0f8392;
+    /* Teal Blue */
+    font-weight: 600;
 }

@@ -142,6 +142,22 @@
   --badge-shadow-base: 0 6px 18px rgba(0, 0, 0, 0.25);
   --badge-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.28);
 
+  
+  
+/* LinkedIn Button Tokens (Theme‑aware Overrides in Theme Files) */
+  --li-bg: #0A66C2;               /* LinkedIn blue */
+  --li-bg-hover: #0856a3;
+  --li-fg: #ffffff;
+  --li-ring: rgba(10, 102, 194, 0.22);
+  --li-shadow: 0 10px 24px rgba(0,0,0,0.20);
+
+  /* Note text */
+  --follow-note: var(--light-gray-70);
+  --li-btn-bg: #0A66C2;               /* LinkedIn Blue */
+  --li-btn-ring: rgba(10, 102, 194, 0.26);  --li-btn-bg-hover: #0856a3;         /* Hover Blue */
+  --li-btn-fg: #ffffff;               /* Text/Icon */
+  --li-btn-shadow: 0 10px 24px rgba(0,0,0,0.18);
+
 }
 
 
@@ -2487,6 +2503,112 @@ textarea.form-input::-webkit-resizer {
 
 .form-btn:disabled:hover::before {
   background: var(--bg-gradient-jet);
+}
+
+/* LinkedIn Follow button */
+
+.contact-follow {
+  margin-top: 10px;
+  margin-bottom: 22px;
+
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--border-gradient-onyx);
+  box-shadow: var(--shadow-2);
+  position: relative;
+  z-index: 1;
+}
+
+.contact-follow::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--bg-gradient-jet);
+  z-index: -1;
+}
+
+.contact-follow .form-title {
+  margin-bottom: 10px;
+}
+
+/* Note */
+.contact-follow-note {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  color: var(--follow-note);
+  font-size: var(--fs-6);
+  line-height: 1.55;
+}
+
+/* LinkedIn button */
+.libutton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: min(320px, 100%);
+  min-height: 44px;
+  padding: 10px 16px;
+
+  border-radius: 999px;
+  background: var(--li-btn-bg);
+  color: var(--li-btn-fg) !important;
+  text-decoration: none !important;
+
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  letter-spacing: 0.2px;
+  line-height: 1;
+
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: var(--li-btn-shadow);
+
+  transition:
+    transform var(--transition-1),
+    box-shadow var(--transition-1),
+    background var(--transition-1);
+}
+
+/* IMPORTANT: override your global reset `ion-icon { display:block; }` */
+.libutton ion-icon {
+  display: inline-flex;
+  font-size: 20px;
+  color: currentColor;
+  flex: 0 0 auto;
+}
+
+.libutton:hover,
+.libutton:focus-visible {
+  background: var(--li-btn-bg-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+  outline: none;
+}
+
+.libutton:focus-visible {
+  box-shadow:
+    0 14px 30px rgba(0,0,0,0.22),
+    0 0 0 4px var(--li-btn-ring);
+}
+
+.linkedIn-highlight {
+  display: inline-flex;
+  
+}
+
+
+html[data-theme="dark"] .linkedIn-highlight {
+  color: var(--orange-yellow-crayola);
+  font-weight: 600;
+}
+
+/* Mobile polish */
+@media (max-width: 480px) {
+  .contact-follow { padding: 12px; }
+  .libutton { width: 100%; }
 }
 
 
