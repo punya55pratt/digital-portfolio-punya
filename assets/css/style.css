@@ -158,6 +158,8 @@
   --li-btn-fg: #ffffff;               /* Text/Icon */
   --li-btn-shadow: 0 10px 24px rgba(0,0,0,0.18);
 
+  --client-tooltip-ring: rgba(248, 213, 104, 0.10);
+
 }
 
 
@@ -1069,6 +1071,103 @@ html[data-theme="dark"] .org-highlight {
 .clients-item img:hover {
   filter: grayscale(0);
 }
+
+
+.client-logo {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* Pill tooltip base: hidden and NOT animating */
+.client-logo::after {
+  content: attr(data-client);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) translateY(6px);
+
+  /* Pill look */
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: var(--fs-7);
+  font-weight: var(--fw-600);
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+
+  color: var(--orange-yellow-crayola);
+  border: 1px solid var(--jet);
+
+  box-shadow:
+    0 0 0 3px var(--client-tooltip-ring),
+    0 10px 24px rgba(0, 0, 0, 0.30);
+
+  overflow: hidden;
+
+  /* Sheen background layers */
+  background:
+    linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0) 44%,
+      rgba(255, 255, 255, 0.55) 50%,
+      rgba(255, 255, 255, 0) 56%
+    ),
+    color-mix(in oklab, var(--onyx), black 6%);
+
+  background-size: 220% 100%, 100% 100%;
+  background-position: 120% 0, 0 0;
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+
+  /* IMPORTANT: hidden & no animation by default */
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+
+
+/* Show on hover, keyboard focus, or press */
+.client-logo:hover::after,
+.client-logo:focus-visible::after,
+.client-logo:active::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+
+  /* Start sheen only when visible */
+  animation: clientTooltipSheen 3.6s ease-in-out infinite;
+}
+
+
+
+@keyframes clientTooltipSheen {
+  0%   { background-position: 130% 0, 0 0; opacity: 0; }
+  18%  { opacity: 0.55; }
+  55%  { background-position: -30% 0, 0 0; opacity: 0.22; }
+  100% { background-position: -30% 0, 0 0; opacity: 0; }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .client-logo::after {
+    animation: none;
+    background:
+      color-mix(in oklab, var(--onyx), black 6%);
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .client-logo:hover::after,
+  .client-logo:focus-visible::after,
+  .client-logo:active::after {
+    animation: none;
+  }
+}
+
+
 
 
 
