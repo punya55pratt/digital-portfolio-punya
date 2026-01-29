@@ -407,13 +407,14 @@
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>
-                  Abhilash Nath | C-SOC Analyst & Sec‑OPS Manager <span
-                    class="org-highlight">@ Aashdit Technolgies</span>
+                  Abhilash Nath | C-SOC Analyst & Sec‑OPS Manager <span class="org-highlight">@ Aashdit
+                    Technolgies</span>
                 </h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Punya brings a security-first discipline to development andembeds security excellence into every build 
+                    Punya brings a security-first discipline to development andembeds security excellence into every
+                    build
                     and shows relentless curiosity in advancing his cybersecurity expertise.
                   </p>
                 </div>
@@ -481,7 +482,7 @@
               </div>
             </li>
 
-            
+
 
           </ul>
         </section>
@@ -560,7 +561,8 @@
             </li>
 
             <li class="clients-item">
-              <a href="javascript:void(0)" data-client="The Higher Education Information Management System" class="client-logo">
+              <a href="javascript:void(0)" data-client="The Higher Education Information Management System"
+                class="client-logo">
                 <img src="./assets/images/himsLogo.svg" alt="client logo" />
               </a>
             </li>
@@ -2516,16 +2518,18 @@
           </figure>
         </section>
 
-        
+
         <!-- ✅ NEW: Follow CTA -->
         <section class="contact-follow" aria-label="Follow me">
           <h3 class="h3 form-title">Follow</h3>
           <p class="contact-follow-note">
-            Prefer <span class="linkedIn-highlight">LinkedIn?</span> Follow me for updates on digital banking, delivery leadership, and tech.
+            Prefer <span class="linkedIn-highlight">LinkedIn?</span> Follow me for updates on digital banking, delivery
+            leadership, and tech.
           </p>
-          
-          <a class="libutton" href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=punya-prateek-aaa70679" 
-          target="_blank"><ion-icon name="logo-linkedin" aria-hidden="true"></ion-icon> Follow on LinkedIn</a>
+
+          <a class="libutton"
+            href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=punya-prateek-aaa70679"
+            target="_blank"><ion-icon name="logo-linkedin" aria-hidden="true"></ion-icon> Follow on LinkedIn</a>
         </section>
 
         <section class="contact-form">
@@ -2663,6 +2667,60 @@
     })();
   </script>
 
+  <script>
+    (() => {
+      const SHOW_MS = 1400;
+
+      function showClientPill(anchor) {
+        // Stop href="#" jump if present
+        // (Safe even if href is real URL)
+        // You can remove this if you use real links.
+        // anchor.preventDefault is not available; this will be used in event handler.
+        const rect = anchor.getBoundingClientRect();
+
+        // Center X above the element
+        const x = rect.left + rect.width / 2;
+
+        // Y slightly above the element (logo top) with padding
+        const y = rect.top - 12;
+
+        // Set CSS variables on the element so ::after can use them
+        anchor.style.setProperty("--tt-x", `${x}px`);
+        anchor.style.setProperty("--tt-y", `${y}px`);
+
+        // Show the pill
+        anchor.classList.add("show-pill");
+
+        // Auto-hide after a moment
+        clearTimeout(anchor._tt);
+        anchor._tt = setTimeout(() => {
+          anchor.classList.remove("show-pill");
+        }, SHOW_MS);
+      }
+
+      document.addEventListener("click", (e) => {
+        const a = e.target.closest(".client-logo");
+        if (!a) return;
+
+        // Prevent '#' navigation / jump
+        if (a.getAttribute("href") === "#") e.preventDefault();
+
+        // Only do this behavior on small screens (mobile)
+        if (window.matchMedia("(max-width: 580px)").matches) {
+          showClientPill(a);
+        }
+      });
+
+      // Optional: reposition on scroll while visible (smoothest behavior)
+      window.addEventListener("scroll", () => {
+        const open = document.querySelector(".client-logo.show-pill");
+        if (!open) return;
+        const rect = open.getBoundingClientRect();
+        open.style.setProperty("--tt-x", `${rect.left + rect.width / 2}px`);
+        open.style.setProperty("--tt-y", `${rect.top - 12}px`);
+      }, { passive: true });
+    })();
+  </script>
 
 </body>
 
