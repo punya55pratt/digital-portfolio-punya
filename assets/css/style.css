@@ -1167,7 +1167,42 @@ html[data-theme="dark"] .org-highlight {
   }
 }
 
+/* ===============================
+   MOBILE: tooltip must NOT be clipped
+   Use fixed positioning + JS-provided coordinates
+   =============================== */
+@media (max-width: 580px) {
+  .client-logo::after {
+    position: fixed;                       /* key: avoids truncation */
+    left: var(--tt-x, 50vw);
+    top: var(--tt-y, 30vh);
+    bottom: auto;                          /* override desktop bottom */
+    transform: translate(-50%, -100%);     /* place above the logo */
 
+    /* Safer sizing */
+    max-width: min(92vw, 360px);
+    white-space: normal;                   /* wrap if needed */
+    text-align: center;
+    line-height: 1.25;
+
+    /* Helps prevent text clipping */
+    box-sizing: border-box;
+  }
+
+  /* Only show tooltip when JS adds .show-pill (tap) */
+  .client-logo:hover::after,
+  .client-logo:focus-visible::after,
+  .client-logo:active::after {
+    /* keep these for desktop/press, but on mobile we will use .show-pill */
+    opacity: 0;
+    animation: none;
+  }
+
+  .client-logo.show-pill::after {
+    opacity: 1;
+    animation: clientTooltipSheen 2.8s ease-in-out 1; /* run once on tap */
+  }
+}
 
 
 
